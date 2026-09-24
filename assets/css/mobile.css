@@ -1,0 +1,59 @@
+/* Ajustements pour téléphone, chargés après les styles de chaque page. */
+
+.mnav-toggle,.mnav{display:none}
+
+@media(max-width:760px){
+  /* En-tête : marque, bouton « La lettre » et bouton « Menu » sur une ligne */
+  .nav{min-height:62px;gap:10px}
+  .brand{gap:8px;min-width:0}
+  .brand svg{width:34px;height:34px}
+  .brand strong{font-size:.98rem;line-height:1.15}
+  .links{gap:0;margin-left:auto}
+  .links .btn{white-space:nowrap;padding:10px 15px;font-size:.9rem}
+
+  .mnav-toggle{display:inline-flex;flex-direction:column;align-items:center;justify-content:center;gap:1px;
+    width:48px;height:48px;flex:none;border:1.5px solid var(--line);border-radius:14px;background:var(--ivory);
+    color:var(--brown);font:800 .62rem/1 var(--sans);letter-spacing:.04em;cursor:pointer;padding:0}
+  .mnav-toggle svg path{transition:transform .2s,opacity .2s;transform-origin:12px 12px}
+  .mnav-toggle[aria-expanded="true"] .l1{transform:translateY(5px) rotate(45deg)}
+  .mnav-toggle[aria-expanded="true"] .l2{opacity:0}
+  .mnav-toggle[aria-expanded="true"] .l3{transform:translateY(-5px) rotate(-45deg)}
+  .mnav-toggle:focus-visible{outline:3px solid var(--terra);outline-offset:2px}
+
+  .mnav:not([hidden]){display:block;position:absolute;left:0;right:0;top:100%;
+    background:var(--cream);border-bottom:1px solid var(--line);box-shadow:0 18px 30px rgba(62,45,38,.14);
+    padding:6px 16px 14px;max-height:calc(100vh - 62px);overflow-y:auto}
+  .mnav a{display:flex;align-items:center;min-height:52px;padding:0 6px;border-bottom:1px solid var(--line);
+    color:var(--brown);text-decoration:none;font-weight:700;font-size:1.05rem}
+  .mnav a:last-child{border-bottom:0}
+  .mnav a::after{content:"›";margin-left:auto;color:var(--terra);font-size:1.3rem}
+  .mnav a[aria-current="page"]{color:var(--terra2)}
+}
+
+@media(max-width:640px){
+  /* Titres : pas de coupure au milieu de « tire-t-il » */
+  .nw{white-space:nowrap}
+  h1{overflow-wrap:break-word;text-wrap:balance}
+  h2,h3{text-wrap:balance}
+
+  /* Zones tactiles d'au moins 44 px dans le pied de page */
+  .footer nav{gap:0 18px}
+  .footer nav a{display:inline-flex;align-items:center;min-height:44px}
+  .footer-social a{width:44px;height:44px}
+
+  /* Cases à cocher et boutons radio plus faciles à toucher */
+  input[type=checkbox],input[type=radio]{width:22px;height:22px;flex:none}
+
+  /* Petites étiquettes un peu plus lisibles */
+  .tkind,.f-kind,.rv-l,.label,.lv,.g-badge,.eyebrow{font-size:.76rem}
+
+  /* Champs : 16 px minimum pour éviter le zoom automatique sur iPhone */
+  input,select,textarea{font-size:16px}
+}
+
+@media(max-width:360px){
+  .brand svg{width:30px;height:30px}
+  .brand strong{font-size:.88rem}
+  .links .btn{padding:9px 12px;font-size:.84rem}
+  .mnav-toggle{width:44px;height:44px}
+}
