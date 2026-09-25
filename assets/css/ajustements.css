@@ -69,3 +69,27 @@
   .links .btn{padding:9px 12px;font-size:.84rem}
   .mnav-toggle{width:44px;height:44px}
 }
+
+/* Page d'accueil : « Ta question, en 3 clics » */
+.intent-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:26px}
+.intent{background:var(--ivory);border:1px solid var(--line);border-radius:var(--radius);padding:20px 20px 12px}
+.intent h3{font-size:1.15rem;line-height:1.25;margin:0 0 6px}
+.intent>p{color:var(--muted);font-size:.92rem;margin:0 0 10px}
+.intent ul,.hub-links{list-style:none;padding:0;margin:0}
+.intent li a,.hub-links a{display:flex;align-items:center;gap:10px;min-height:46px;border-top:1px solid var(--line);
+  text-decoration:none;color:var(--brown);font-weight:700;font-size:.95rem;line-height:1.3;padding:6px 0}
+.intent li a span,.hub-k{flex:none;min-width:54px;font-size:.68rem;text-transform:uppercase;letter-spacing:.07em;color:var(--terra2);font-weight:800}
+.intent li a::after,.hub-links a::after{content:"→";margin-left:auto;padding-left:8px;color:var(--terra)}
+.intent li a:hover,.hub-links a:hover{color:var(--terra2)}
+.intent-more{display:flex;flex-wrap:wrap;gap:12px;margin-top:24px}
+@media(max-width:950px){.intent-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:640px){.intent-grid{grid-template-columns:1fr}.intent-more .btn{width:100%}}
+
+/* Dossier chien catégorisé : parcours numéroté */
+.hub{list-style:none;counter-reset:hub;padding:0!important;margin:26px 0 30px;display:grid;gap:14px}
+.hub-step{counter-increment:hub;position:relative;background:var(--ivory);border:1px solid var(--line);border-radius:18px;padding:18px 18px 10px 62px}
+.hub-step::before{content:counter(hub);position:absolute;left:16px;top:16px;width:32px;height:32px;border-radius:50%;
+  background:var(--terra2);color:#fff;font-weight:800;display:grid;place-items:center;font-size:.9rem}
+.hub-step h2{font-size:1.15rem;margin:4px 0 4px;line-height:1.25}
+.hub-step>p{color:var(--muted);font-size:.93rem;margin:0 0 8px}
+@media(max-width:640px){.hub-step{padding:16px 14px 8px 54px}.hub-step::before{left:12px}}
