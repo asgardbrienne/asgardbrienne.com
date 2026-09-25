@@ -125,3 +125,8 @@ body{-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
 .ph-inline{max-width:340px;margin:18px auto}
 @media(max-width:950px){.ph-grid{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:640px){.ph-grid{gap:12px}.ph figcaption{font-size:1.15rem}}
+
+/* Photo d'accueil */
+.hero-photo{padding:12px 12px 60px}
+.hero-photo img{display:block;width:100%;height:auto;aspect-ratio:6/5;object-fit:cover;border-radius:22px}
+.hero-photo .tag b{font-style:normal}
