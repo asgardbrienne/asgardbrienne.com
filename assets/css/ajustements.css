@@ -90,7 +90,7 @@ body{-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
 /* Page d'accueil : « Ta question, en 3 clics » */
 .intent-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:26px}
 .intent{background:var(--ivory);border:1px solid var(--line);border-radius:var(--radius);padding:20px 20px 12px}
-.intent h3{font-size:1.15rem;line-height:1.25;margin:0 0 6px}
+.intent h3{font-size:1.18rem;line-height:1.25;margin:0 0 6px;letter-spacing:0;font-variation-settings:"opsz" 24}
 .intent>p{color:var(--muted);font-size:.92rem;margin:0 0 10px}
 .intent ul,.hub-links{list-style:none;padding:0;margin:0}
 .intent li a,.hub-links a{display:flex;align-items:center;gap:10px;min-height:46px;border-top:1px solid var(--line);
@@ -154,3 +154,6 @@ body{-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
 .lb button{position:absolute;background:rgba(255,255,255,.12);color:#fff;border:0;border-radius:50%;width:48px;height:48px;font-size:1.8rem;line-height:1;cursor:pointer}
 .lb-x{top:14px;right:14px}.lb-p{left:10px;top:50%;transform:translateY(-50%)}.lb-n{right:10px;top:50%;transform:translateY(-50%)}
 @media(max-width:640px){.gal{columns:2;column-gap:10px}.gal-it{margin-bottom:12px}.gal-it figcaption{font-size:1.05rem}}
+.intent-cat{margin:18px 0 0;color:var(--muted);font-size:.95rem}
+.intent-cat a{font-weight:700;color:var(--terra2)}
+@media(min-width:951px){.intent-grid{grid-template-columns:repeat(3,1fr)}}
