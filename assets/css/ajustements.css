@@ -1,4 +1,16 @@
-/* Ajustements pour téléphone, chargés après les styles de chaque page. */
+/* Ajustements communs, chargés après les styles de chaque page :
+   pattes décoratives, puis réglages pour téléphone. */
+
+/* Pattes à la place des petits traits devant les surtitres */
+.eyebrow::before{width:17px;height:17px;flex:none;
+  -webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Cellipse cx='20' cy='26' rx='8' ry='6.6'/%3E%3Cellipse cx='10.5' cy='17' rx='3.3' ry='4.2'/%3E%3Cellipse cx='16.5' cy='11' rx='3.3' ry='4.3'/%3E%3Cellipse cx='23.5' cy='11' rx='3.3' ry='4.3'/%3E%3Cellipse cx='29.5' cy='17' rx='3.3' ry='4.2'/%3E%3C/svg%3E") center/contain no-repeat;mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Cellipse cx='20' cy='26' rx='8' ry='6.6'/%3E%3Cellipse cx='10.5' cy='17' rx='3.3' ry='4.2'/%3E%3Cellipse cx='16.5' cy='11' rx='3.3' ry='4.3'/%3E%3Cellipse cx='23.5' cy='11' rx='3.3' ry='4.3'/%3E%3Cellipse cx='29.5' cy='17' rx='3.3' ry='4.2'/%3E%3C/svg%3E") center/contain no-repeat}
+
+/* Pattes à la place des puces rondes dans les listes simples */
+.prose ul:not([class])>li,article.guide ul:not([class])>li,.featured ul:not([class])>li{list-style:none;position:relative}
+.prose ul:not([class]),article.guide ul:not([class]),.featured ul:not([class]){padding-left:1.55em}
+.prose ul:not([class])>li::before,article.guide ul:not([class])>li::before,.featured ul:not([class])>li::before{
+  content:"";position:absolute;left:-1.45em;top:.32em;width:.95em;height:.95em;background:var(--terra);
+  -webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Cellipse cx='20' cy='26' rx='8' ry='6.6'/%3E%3Cellipse cx='10.5' cy='17' rx='3.3' ry='4.2'/%3E%3Cellipse cx='16.5' cy='11' rx='3.3' ry='4.3'/%3E%3Cellipse cx='23.5' cy='11' rx='3.3' ry='4.3'/%3E%3Cellipse cx='29.5' cy='17' rx='3.3' ry='4.2'/%3E%3C/svg%3E") center/contain no-repeat;mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Cellipse cx='20' cy='26' rx='8' ry='6.6'/%3E%3Cellipse cx='10.5' cy='17' rx='3.3' ry='4.2'/%3E%3Cellipse cx='16.5' cy='11' rx='3.3' ry='4.3'/%3E%3Cellipse cx='23.5' cy='11' rx='3.3' ry='4.3'/%3E%3Cellipse cx='29.5' cy='17' rx='3.3' ry='4.2'/%3E%3C/svg%3E") center/contain no-repeat}
 
 .mnav-toggle,.mnav{display:none}
 
