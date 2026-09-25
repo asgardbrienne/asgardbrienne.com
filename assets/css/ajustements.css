@@ -130,3 +130,7 @@ body{-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
 .hero-photo{padding:12px 12px 60px}
 .hero-photo img{display:block;width:100%;height:auto;aspect-ratio:6/5;object-fit:cover;border-radius:22px}
 .hero-photo .tag b{font-style:normal}
+.ph-bento{grid-template-columns:2fr 1fr 1fr 1fr}
+.ph-bento .ph img{aspect-ratio:auto;height:clamp(240px,26vw,340px)}
+@media(max-width:950px){.ph-bento{grid-template-columns:1fr 1fr}.ph-bento .ph-wide{grid-column:1/-1}.ph-bento .ph img{height:auto;aspect-ratio:4/5}.ph-bento .ph-wide img{aspect-ratio:8/5}}
+@media(max-width:950px){.ph-bento .ph:last-child{grid-column:1/-1}.ph-bento .ph:last-child img{aspect-ratio:4/3;object-position:50% 45%}}
