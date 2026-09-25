@@ -134,3 +134,23 @@ body{-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
 .ph-bento .ph img{aspect-ratio:auto;height:clamp(240px,26vw,340px)}
 @media(max-width:950px){.ph-bento{grid-template-columns:1fr 1fr}.ph-bento .ph-wide{grid-column:1/-1}.ph-bento .ph img{height:auto;aspect-ratio:4/5}.ph-bento .ph-wide img{aspect-ratio:8/5}}
 @media(max-width:950px){.ph-bento .ph:last-child{grid-column:1/-1}.ph-bento .ph:last-child img{aspect-ratio:4/3;object-position:50% 45%}}
+
+/* Galerie « Leur vie en images » */
+.gal{columns:3 280px;column-gap:18px;margin-top:22px}
+.gal-it{break-inside:avoid;margin:0 0 18px}
+.gal-it[hidden]{display:none}
+.gal-it img{display:block;width:100%;height:auto;border-radius:18px;box-shadow:0 8px 24px rgba(62,45,38,.12);transition:transform .25s}
+.gal-a{display:block;cursor:zoom-in}
+.gal-a:hover img{transform:scale(1.015)}
+.gal-it figcaption{font-family:var(--hand);font-size:1.3rem;font-weight:700;color:var(--terra2);margin-top:6px;line-height:1.1}
+.gal-end{text-align:center;margin:40px 0 20px;display:flex;flex-wrap:wrap;gap:12px;justify-content:center;align-items:center}
+.gal-end p{flex-basis:100%;color:var(--muted);margin:0 0 4px}
+.gal-more{margin:22px 0 0;text-align:center}
+.lb{position:fixed;inset:0;z-index:100;background:rgba(30,22,18,.92);display:flex;align-items:center;justify-content:center;padding:20px}
+.lb[hidden]{display:none}
+.lb figure{margin:0;max-width:min(1000px,100%);text-align:center}
+.lb img{max-width:100%;max-height:82vh;border-radius:14px;display:block;margin:0 auto}
+.lb figcaption{font-family:var(--hand);font-size:1.5rem;color:#f4cdb7;margin-top:10px}
+.lb button{position:absolute;background:rgba(255,255,255,.12);color:#fff;border:0;border-radius:50%;width:48px;height:48px;font-size:1.8rem;line-height:1;cursor:pointer}
+.lb-x{top:14px;right:14px}.lb-p{left:10px;top:50%;transform:translateY(-50%)}.lb-n{right:10px;top:50%;transform:translateY(-50%)}
+@media(max-width:640px){.gal{columns:2;column-gap:10px}.gal-it{margin-bottom:12px}.gal-it figcaption{font-size:1.05rem}}
