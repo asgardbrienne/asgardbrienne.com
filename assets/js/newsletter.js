@@ -36,7 +36,7 @@
           if (btn) btn.disabled = false;
           if (res.ok && (!res.data || res.data.success !== false)) {
             form.reset();
-            say("Presque fini : un e-mail de confirmation vient de t’être envoyé. Clique sur le lien qu’il contient pour valider ton inscription (pense à regarder dans les spams).", true);
+            say("C’est fait ! Ton inscription est enregistrée. La prochaine newsletter arrivera directement dans ta boîte mail.", true);
           } else {
             say("L’inscription n’a pas abouti. Vérifie ton adresse e-mail et réessaie.", false);
           }
