@@ -159,151 +159,129 @@ body{-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
 @media(min-width:951px){.intent-grid{grid-template-columns:repeat(3,1fr)}}
 
 /* ==========================================================
-   Refonte « premium » : palette sobre, typographie éditoriale,
-   cartes nettes. Chargée en dernier, elle prime sur le reste.
+   Direction « Éditorial » : Cormorant Garamond et Jost,
+   ivoire pâle, encre, touche taupe. Angles nets, filets fins.
    ========================================================== */
-@font-face{font-family:"Instrument Serif";font-style:normal;font-weight:400;font-display:swap;src:url(../fonts/instrument-serif-latin-400-normal.woff2) format("woff2")}
-@font-face{font-family:"Instrument Serif";font-style:italic;font-weight:400;font-display:swap;src:url(../fonts/instrument-serif-latin-400-italic.woff2) format("woff2")}
-@font-face{font-family:"Inter";font-style:normal;font-weight:100 900;font-display:swap;src:url(../fonts/inter-latin-wght-normal.woff2) format("woff2")}
-@font-face{font-family:"Inter";font-style:italic;font-weight:100 900;font-display:swap;src:url(../fonts/inter-latin-wght-italic.woff2) format("woff2")}
+@font-face{font-family:"Cormorant Garamond";font-style:normal;font-weight:500;font-display:swap;src:url(../fonts/cormorant-garamond-latin-500-normal.woff2) format("woff2")}
+@font-face{font-family:"Cormorant Garamond";font-style:italic;font-weight:500;font-display:swap;src:url(../fonts/cormorant-garamond-latin-500-italic.woff2) format("woff2")}
+@font-face{font-family:"Cormorant Garamond";font-style:normal;font-weight:600;font-display:swap;src:url(../fonts/cormorant-garamond-latin-600-normal.woff2) format("woff2")}
+@font-face{font-family:"Cormorant Garamond";font-style:italic;font-weight:600;font-display:swap;src:url(../fonts/cormorant-garamond-latin-600-italic.woff2) format("woff2")}
+@font-face{font-family:"Jost";font-style:normal;font-weight:100 900;font-display:swap;src:url(../fonts/jost-latin-wght-normal.woff2) format("woff2")}
+@font-face{font-family:"Jost";font-style:italic;font-weight:100 900;font-display:swap;src:url(../fonts/jost-latin-wght-italic.woff2) format("woff2")}
 
 :root{
-  --cream:#f8f6f2;--ivory:#ffffff;--paper:#ffffff;--brown:#17140f;--muted:#5d564e;
-  --terra:#a07352;--terra2:#17140f;--terra-soft:#f0ebe4;--sage:#44503f;--sage2:#1f2621;--sage-soft:#eef0eb;
-  --sand:#d9cfc3;--line:#e6e1d9;--accent:#8b5a3c;
-  --display:"Instrument Serif","Times New Roman",serif;--serif:var(--sans);--hand:var(--display);
-  --radius:12px;
+  --cream:#f7f5f0;--ivory:#ffffff;--paper:#ffffff;--brown:#1c1b19;--muted:#57534c;
+  --ink:#1c1b19;--taupe:#8a7560;
+  --terra:#8a7560;--terra2:#1c1b19;--terra-soft:#efebe4;--sage:#57534c;--sage2:#1c1b19;--sage-soft:#efece6;
+  --sand:#d6cfc3;--line:#dcd7ce;--accent:#8a7560;
+  --display:"Cormorant Garamond","Times New Roman",serif;--sans:"Jost",ui-sans-serif,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+  --serif:var(--sans);--hand:var(--display);
+  --radius:0px;
 }
-body{background:var(--cream);color:var(--brown);font-size:17px;letter-spacing:-.003em}
-::selection{background:#17140f;color:#fff}
-a{color:var(--brown);text-decoration-thickness:1px}
+body{background:var(--cream);color:var(--ink);font-family:var(--sans);font-size:16.5px;line-height:1.7;font-weight:400;letter-spacing:.005em}
+::selection{background:var(--ink);color:#fff}
+a{color:var(--ink);text-decoration-thickness:1px;text-decoration-color:rgba(28,27,25,.35)}
 
-/* Titres : un seul serif, poids normal, italique pour l'accent */
-h1,h2,h3{font-family:var(--display);font-weight:400;font-variation-settings:normal;letter-spacing:-.012em;line-height:1.04}
-h1{font-size:clamp(2.7rem,6.2vw,5.2rem);letter-spacing:-.02em;line-height:.98}
-h2{font-size:clamp(2.1rem,4.1vw,3.3rem)}
-h3{font-size:1.5rem;line-height:1.12}
-.hand{font-family:var(--display);font-style:italic;font-weight:400;font-size:1em;color:inherit;letter-spacing:-.01em;line-height:inherit}
-.lead{color:var(--muted);font-size:1.13rem;line-height:1.6}
+/* Titres */
+h1,h2,h3{font-family:var(--display);font-weight:500;font-variation-settings:normal;letter-spacing:-.01em;line-height:1.06}
+h1{font-size:clamp(2.7rem,6vw,5.4rem);line-height:1.02}
+h2{font-size:clamp(2.1rem,3.8vw,3.5rem);line-height:1.08}
+h3{font-size:1.5rem;line-height:1.15;letter-spacing:0}
+.hand,h1 em,h2 em{font-family:var(--display);font-style:italic;font-weight:500;font-size:1em;color:inherit;letter-spacing:-.01em;line-height:inherit}
+.lead{color:var(--muted);font-size:1.1rem;line-height:1.75}
+strong,b{font-weight:600}
 
-/* Surtitres : capitales espacées, fin trait, plus de pattes */
-.eyebrow{color:var(--muted);font-weight:600;font-size:.72rem;letter-spacing:.2em}
-.eyebrow::before{-webkit-mask:none;mask:none;width:28px;height:1px;background:currentColor;opacity:.6}
+/* Surtitres et étiquettes : petites capitales espacées */
+.eyebrow{color:var(--muted);font-weight:500;font-size:.68rem;letter-spacing:.24em;max-width:100%;flex-wrap:wrap}
+.eyebrow::before{display:none}
+.tkind,.f-kind,.g-badge{background:transparent!important;border:0!important;padding:0!important;color:var(--taupe)!important;
+  font-weight:500;font-size:.64rem;letter-spacing:.22em;border-radius:0}
+.tneed{font-family:var(--display)!important;font-style:italic;font-size:1.15rem!important;color:var(--muted)!important;line-height:1.4}
+.stamp{transform:none!important;font-family:var(--sans);font-style:normal;font-weight:500;font-size:.6rem!important;letter-spacing:.2em;
+  border:1px solid currentColor!important;border-radius:0!important;padding:3px 8px;background:transparent!important;color:var(--taupe)!important}
 .prose ul:not([class])>li::before,article.guide ul:not([class])>li::before,.featured ul:not([class])>li::before{
-  -webkit-mask:none;mask:none;width:.55em;height:1px;top:.8em;left:-1.2em;background:var(--brown)}
+  -webkit-mask:none;mask:none;width:.6em;height:1px;top:.85em;left:-1.25em;background:var(--taupe)}
 
-/* Boutons */
-.btn{font-weight:600;letter-spacing:.01em;padding:14px 26px;border-width:1px;transition:background .2s,color .2s,border-color .2s}
+/* Boutons : angles nets, capitales espacées */
+.btn{border-radius:0!important;text-transform:uppercase;font-size:.72rem;letter-spacing:.18em;font-weight:500;padding:17px 30px;border-width:1px;transition:background .2s,color .2s}
 .btn:hover{transform:none}
-.btn-primary,.btn-sage{background:#17140f;color:#fff}
-.btn-primary:hover,.btn-sage:hover{background:#000}
-.btn-outline{border-color:#17140f;color:#17140f}
-.btn-outline:hover{background:#17140f;color:#fff}
-.more{color:var(--brown)!important;font-weight:600;letter-spacing:.01em}
+.btn-primary,.btn-sage,.links a.btn{background:var(--ink)!important;color:#fff!important;border-color:var(--ink)!important}
+.btn-primary:hover,.btn-sage:hover,.links a.btn:hover{background:#000!important}
+.btn-outline{border-color:var(--ink)!important;color:var(--ink)!important;background:transparent}
+.btn-outline:hover{background:var(--ink)!important;color:#fff!important}
+.more{color:var(--ink)!important;text-transform:uppercase;font-size:.7rem;letter-spacing:.18em;font-weight:500}
 
-/* En-tête : logotype typographique */
-.header{background:rgba(248,246,242,.86);border-bottom:1px solid var(--line)}
+/* En-tête */
+.header{background:rgba(247,245,240,.94);border-bottom:1px solid var(--line)}
 .brand svg{display:none}
-.brand strong{font-family:var(--display);font-weight:400;font-size:1.45rem;letter-spacing:-.01em;line-height:1}
-.brand small{font-size:.62rem;text-transform:uppercase;letter-spacing:.2em;color:var(--muted);margin-top:4px}
-.links a{font-weight:500;font-size:.9rem}
-.links a:not(.btn):hover{text-decoration:underline;text-underline-offset:6px}
-.links a.btn{padding:10px 20px}
-@media(max-width:760px){.brand strong{font-size:1.28rem}.mnav-toggle{border-radius:999px;background:transparent;border-color:var(--line)}
-  .mnav a::after{color:var(--muted)}.mnav{background:var(--cream)!important}}
+.brand strong{font-family:var(--display);font-weight:500;font-size:1.55rem;letter-spacing:0;line-height:1;white-space:nowrap}
+.brand small{font-size:.58rem;text-transform:uppercase;letter-spacing:.24em;color:var(--muted);margin-top:5px}
+.links a:not(.btn){text-transform:uppercase;font-size:.7rem;letter-spacing:.18em;font-weight:500}
+.links a:not(.btn):hover{text-decoration:underline;text-underline-offset:7px}
+.links a.btn{padding:12px 20px}
+@media(max-width:760px){
+  .brand strong{font-size:1.22rem}
+  .links .btn{padding:11px 14px;letter-spacing:.12em;font-size:.66rem}
+  .mnav-toggle{border-radius:0;background:transparent;border-color:var(--line)}
+  .mnav{background:var(--cream)!important}
+  .mnav a{font-family:var(--display);font-weight:500;font-size:1.35rem}
+  .mnav a::after{color:var(--taupe)}
+}
+@media(max-width:380px){.brand strong{font-size:1.05rem}.links .btn{padding:10px 11px;letter-spacing:.08em}}
 
-/* Cartes : blanches, filet fin, pas d'ombre, pas de saut */
-.gcard,.fcard,.intent,.diff-item,.soc-card,.hub-step,.profile,.resume a,.tcard{background:#fff;border:1px solid var(--line);box-shadow:none}
-.gcard:hover,.fcard:hover,.soc-card:hover,.tcard:hover{transform:none!important;box-shadow:none!important;border-color:#17140f}
-.gcard h3,.fcard h3{font-size:1.55rem;line-height:1.1}
-.alt{background:#fff}
-.block{padding:96px 0}
-@media(max-width:640px){.block{padding:64px 0}}
-
-/* Vignettes illustrées : carrées, discrètes */
-.thumb{border-radius:10px;border:0;box-shadow:none;background:#f1ece5;width:58px;height:58px}
-.f-portrait img,.f-portrait{border-radius:14px!important;box-shadow:none!important}
-
-/* Étiquettes : sobres */
-.tkind,.f-kind,.g-badge{background:transparent!important;border:1px solid var(--line);color:var(--muted)!important;font-weight:600;letter-spacing:.14em;border-radius:999px}
-.tneed{font-family:var(--serif);font-size:1.12rem;color:var(--muted)!important}
-.stamp{transform:none!important;font-family:var(--sans);font-style:normal;font-weight:700;font-size:.62rem!important;letter-spacing:.16em;
-  border:1px solid currentColor!important;border-radius:999px;padding:4px 10px;background:#fff!important}
-
-/* Numéros */
-.num,.rn,.hub-step::before{background:transparent!important;color:var(--brown)!important;border:1px solid var(--brown);font-weight:600;border-radius:50%}
-
-/* Fini les pointillés (remplacés dans les styles de page) */
+/* Blocs : plus de cartes encadrées, un filet noir au-dessus */
+.gcard,.fcard,.intent,.diff-item,.soc-card,.tcard{background:transparent!important;border:0!important;border-top:1px solid var(--ink)!important;
+  border-radius:0!important;box-shadow:none!important;padding:26px 0 0!important}
+.gcard:hover,.fcard:hover,.soc-card:hover,.tcard:hover{transform:none!important;box-shadow:none!important}
+.gcard:hover h3,.fcard:hover h3,.soc-card:hover h3{text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:5px}
+.fcard::before{display:none}
+.gcard h3,.fcard h3,.intent h3,.diff-item h3,.soc-card h3,.profile h3,.tcard h3,.hub-step h2{font-family:var(--display);font-weight:500;font-size:1.75rem;line-height:1.12}
+.thumb,.fc-foot img{display:none!important}
+.fc-foot{border-top:1px solid var(--line)!important;border-left:0!important;border-right:0!important;border-bottom:0!important}
+.hub-step,.profile,.resume a{background:var(--ivory);border:1px solid var(--line);border-radius:0;box-shadow:none}
+.num,.rn,.hub-step::before{background:transparent!important;border:0!important;color:var(--taupe)!important;font-family:var(--display);font-weight:500;font-size:1.25rem;border-radius:0;width:auto;height:auto;justify-content:start}
+.alt{background:var(--ivory)}
+.block{padding:120px 0}
+@media(max-width:640px){.block{padding:72px 0}}
 .keyq,.f-guess{border-color:var(--line)!important}
+.f-answer{background:var(--ink);border-radius:0}
+.f-answer .f-k{color:#cbbba6}
+.f-portrait img,.f-portrait{border-radius:0!important;box-shadow:none!important}
 
-/* Accueil : photo d'ouverture sans cadre */
-.hero-visual{background:transparent;border:0;box-shadow:none;padding:0 0 0;border-radius:0}
-.hero-visual img{border-radius:6px!important}
-.tag{background:rgba(255,255,255,.92);border:0;border-radius:999px;padding:6px 14px;font-size:.78rem;backdrop-filter:blur(6px)}
-.tag strong,.tag b{font-family:var(--display);font-weight:400;font-size:1.05rem;color:var(--brown)!important}
-
-/* Photos : nettes, format Instagram */
-.ph img{border-radius:6px;box-shadow:none}
-.ph figcaption{font-family:var(--sans);font-size:.72rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-top:10px}
+/* Photos */
+.hero-visual{background:transparent;border:0;box-shadow:none;padding:0;border-radius:0}
+.hero-visual img,.ph img{border-radius:0!important;box-shadow:none!important}
+.tag{background:var(--ivory);border:0;border-radius:0;padding:7px 14px;font-size:.66rem;letter-spacing:.14em;text-transform:uppercase}
+.tag b,.tag strong{font-family:var(--sans);font-weight:600;font-size:.66rem;color:var(--ink)!important;margin-right:4px}
+.ph figcaption{font-family:var(--sans);font-size:.66rem;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin-top:12px}
 .story-photo{padding:0}
 
 /* Bandeau de confiance */
-.trust{border-block:1px solid var(--line);background:#fff}
-.trust ul{list-style:none;margin:0 auto;padding:22px 0;display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
-.trust li{display:flex;flex-direction:column;gap:2px;font-size:.86rem;color:var(--muted);line-height:1.4;padding-left:16px;border-left:1px solid var(--line)}
+.trust{border-block:1px solid var(--line);background:transparent}
+.trust ul{list-style:none;margin:0 auto;padding:24px 0;display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.trust li{display:flex;flex-direction:column;gap:2px;font-size:.86rem;color:var(--muted);line-height:1.45;padding-left:16px;border-left:1px solid var(--line)}
 .trust li:first-child{border-left:0;padding-left:0}
-.trust strong{font-family:var(--display);font-weight:400;font-size:1.3rem;color:var(--brown);line-height:1.1}
+.trust strong{font-family:var(--display);font-weight:500;font-size:1.5rem;color:var(--ink);line-height:1.1}
 @media(max-width:860px){.trust ul{grid-template-columns:1fr 1fr}.trust li:nth-child(3){border-left:0;padding-left:0}}
 @media(max-width:420px){.trust ul{grid-template-columns:1fr;gap:12px}.trust li{border-left:0;padding-left:0}}
 
 /* Pied de page */
-body>footer{background:#17140f}
+body>footer{background:var(--ink)}
+body>footer strong{font-family:var(--display);font-weight:500;font-size:1.4rem}
 
-/* Petits titres : le serif étroit a besoin d'air */
-h3{letter-spacing:0}
-.intent h3,.diff-item h3,.hub-step h2,.soc-card h3,.profile h3{font-size:1.5rem;line-height:1.12;letter-spacing:0;font-variation-settings:normal}
-.tneed{font-family:var(--sans)!important;font-style:italic;font-size:.9rem!important;line-height:1.5}
-.thumb{border-radius:10px!important;border:0!important;box-shadow:none!important}
-
-/* Le serif étroit reste réservé aux grands titres et aux titres de cartes.
-   Ailleurs, les petits titres passent en Inter demi-gras, plus lisible. */
-h3{font-family:var(--sans);font-weight:650;font-size:1.12rem;letter-spacing:-.01em;line-height:1.3}
-.gcard h3,.fcard h3,.intent h3,.diff-item h3,.soc-card h3,.profile h3,.tcard h3,.featured h3,.story h3{font-family:var(--display);font-weight:400;letter-spacing:0;line-height:1.12}
-.hub-step h2{font-family:var(--display)}
-h1 em,h2 em{font-family:var(--display);font-style:italic;font-weight:400}
+/* Garde-fous de mise en page */
 .news>*,.hero-grid>*,.section-head>*,.story-grid>*{min-width:0}
-.eyebrow{max-width:100%;flex-wrap:wrap}
-@media(max-width:420px){.eyebrow{letter-spacing:.14em}}
-
-/* ==========================================================
-   Palette « Forêt et laiton » : vert profond, crème, doré.
-   ========================================================== */
-:root{
-  --cream:#f5f0e6;--ivory:#fffdf8;--paper:#fffdf8;--brown:#1b1d18;--muted:#5b5d52;
-  --forest:#1f3b2f;--forest2:#2b4d3e;--brass:#b08d57;--brass2:#8f6f3e;
-  --terra:#b08d57;--terra2:#1f3b2f;--terra-soft:#ece4d4;--sage:#2b4d3e;--sage2:#1f3b2f;--sage-soft:#e6ebe4;
-  --sand:#d8ccb6;--line:#e2d9c8;--accent:#b08d57;
+@media(max-width:420px){.eyebrow{letter-spacing:.16em}}
+/* Téléphone : en-tête épuré, logotype et menu seulement (la newsletter est dans le menu) */
+@media(max-width:480px){
+  .links .btn{display:none}
+  .brand strong{font-size:1.3rem}
+  .mnav-toggle{border:0;width:44px}
+  .mnav-toggle span{font-size:.56rem;letter-spacing:.16em;text-transform:uppercase;font-weight:500}
 }
-body{background:var(--cream)}
-::selection{background:var(--forest);color:#fff}
-.header{background:rgba(245,240,230,.9)}
-.btn-primary,.btn-sage,.links a.btn{background:var(--forest)!important;color:#fff!important}
-.btn-primary:hover,.btn-sage:hover,.links a.btn:hover{background:#142a21!important}
-.btn-outline{border-color:var(--forest);color:var(--forest)}
-.btn-outline:hover{background:var(--forest);color:#fff}
-h1 .hand,h2 .hand,h1 em,h2 em{color:var(--forest)}
-.eyebrow{color:var(--brass2)}
-.eyebrow::before{background:var(--brass);opacity:1}
-.more{color:var(--forest)!important}
-.num,.rn,.hub-step::before{border-color:var(--brass)!important;color:var(--forest)!important}
-.gcard:hover,.fcard:hover,.soc-card:hover,.tcard:hover{border-color:var(--forest)}
-.alt{background:var(--ivory)}
-.trust{background:var(--forest);border:0}
-.trust li{color:rgba(255,255,255,.74);border-color:rgba(255,255,255,.16)}
-.trust strong{color:#fff}
-body>footer{background:var(--forest)}
-.prose ul:not([class])>li::before,article.guide ul:not([class])>li::before,.featured ul:not([class])>li::before{background:var(--brass)}
-.stamp{color:var(--brass2)!important}
-a{text-decoration-color:rgba(31,59,47,.35)}
-.f-answer{background:var(--forest)}
-.f-answer .f-k{color:#d9c29a}
+/* Schémas : mêmes polices que le site */
+svg text{font-family:var(--sans)}
+svg text[font-family^="Georgia"]{font-family:var(--display);font-size:1.12em}
+/* Illustrations d'en-tête : sans cadre ni ombre */
+.g-pic{background:transparent!important;border:0!important;box-shadow:none!important;border-radius:0!important}
+.g-pic img{border-radius:0!important}
