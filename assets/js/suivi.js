@@ -57,3 +57,26 @@
   var c = anchor.querySelector(".container");
   if (c) c.insertBefore(box, c.firstChild);
 })();
+
+/* Sommaire des guides : met en évidence la partie en cours de lecture. */
+(function () {
+  var links = document.querySelectorAll("nav.chips a[href^='#']");
+  if (!links.length || !("IntersectionObserver" in window)) return;
+  var map = {};
+  links.forEach(function (a) {
+    var s = document.getElementById(a.getAttribute("href").slice(1));
+    if (s) map[s.id] = a;
+  });
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (!e.isIntersecting) return;
+      links.forEach(function (a) { a.classList.remove("on"); });
+      var a = map[e.target.id];
+      if (a) {
+        a.classList.add("on");
+        if (a.parentNode.scrollWidth > a.parentNode.clientWidth) a.scrollIntoView({ block: "nearest", inline: "center" });
+      }
+    });
+  }, { rootMargin: "-30% 0px -60% 0px" });
+  Object.keys(map).forEach(function (id) { io.observe(document.getElementById(id)); });
+})();
