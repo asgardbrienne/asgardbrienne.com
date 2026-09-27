@@ -1,5 +1,5 @@
 /* Menu mobile : bouton « Menu » et panneau de navigation sous l'en-tête.
-   Le panneau reprend les liens de la navigation principale de la page. */
+   Le panneau reprend tous les liens de la navigation principale, newsletter comprise. */
 (function () {
   var nav = document.querySelector(".header .nav");
   var links = nav && nav.querySelector(".links");
@@ -10,7 +10,7 @@
   panel.id = "mnav";
   panel.setAttribute("aria-label", "Menu");
   panel.hidden = true;
-  links.querySelectorAll("a:not(.btn)").forEach(function (a) {
+  links.querySelectorAll("a").forEach(function (a) {
     var c = a.cloneNode(true);
     c.removeAttribute("class");
     panel.appendChild(c);
