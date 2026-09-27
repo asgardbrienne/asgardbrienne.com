@@ -274,3 +274,36 @@ h1 em,h2 em{font-family:var(--display);font-style:italic;font-weight:400}
 .news>*,.hero-grid>*,.section-head>*,.story-grid>*{min-width:0}
 .eyebrow{max-width:100%;flex-wrap:wrap}
 @media(max-width:420px){.eyebrow{letter-spacing:.14em}}
+
+/* ==========================================================
+   Palette « Forêt et laiton » : vert profond, crème, doré.
+   ========================================================== */
+:root{
+  --cream:#f5f0e6;--ivory:#fffdf8;--paper:#fffdf8;--brown:#1b1d18;--muted:#5b5d52;
+  --forest:#1f3b2f;--forest2:#2b4d3e;--brass:#b08d57;--brass2:#8f6f3e;
+  --terra:#b08d57;--terra2:#1f3b2f;--terra-soft:#ece4d4;--sage:#2b4d3e;--sage2:#1f3b2f;--sage-soft:#e6ebe4;
+  --sand:#d8ccb6;--line:#e2d9c8;--accent:#b08d57;
+}
+body{background:var(--cream)}
+::selection{background:var(--forest);color:#fff}
+.header{background:rgba(245,240,230,.9)}
+.btn-primary,.btn-sage,.links a.btn{background:var(--forest)!important;color:#fff!important}
+.btn-primary:hover,.btn-sage:hover,.links a.btn:hover{background:#142a21!important}
+.btn-outline{border-color:var(--forest);color:var(--forest)}
+.btn-outline:hover{background:var(--forest);color:#fff}
+h1 .hand,h2 .hand,h1 em,h2 em{color:var(--forest)}
+.eyebrow{color:var(--brass2)}
+.eyebrow::before{background:var(--brass);opacity:1}
+.more{color:var(--forest)!important}
+.num,.rn,.hub-step::before{border-color:var(--brass)!important;color:var(--forest)!important}
+.gcard:hover,.fcard:hover,.soc-card:hover,.tcard:hover{border-color:var(--forest)}
+.alt{background:var(--ivory)}
+.trust{background:var(--forest);border:0}
+.trust li{color:rgba(255,255,255,.74);border-color:rgba(255,255,255,.16)}
+.trust strong{color:#fff}
+body>footer{background:var(--forest)}
+.prose ul:not([class])>li::before,article.guide ul:not([class])>li::before,.featured ul:not([class])>li::before{background:var(--brass)}
+.stamp{color:var(--brass2)!important}
+a{text-decoration-color:rgba(31,59,47,.35)}
+.f-answer{background:var(--forest)}
+.f-answer .f-k{color:#d9c29a}
