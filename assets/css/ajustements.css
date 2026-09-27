@@ -157,3 +157,120 @@ body{-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
 .intent-cat{margin:18px 0 0;color:var(--muted);font-size:.95rem}
 .intent-cat a{font-weight:700;color:var(--terra2)}
 @media(min-width:951px){.intent-grid{grid-template-columns:repeat(3,1fr)}}
+
+/* ==========================================================
+   Refonte « premium » : palette sobre, typographie éditoriale,
+   cartes nettes. Chargée en dernier, elle prime sur le reste.
+   ========================================================== */
+@font-face{font-family:"Instrument Serif";font-style:normal;font-weight:400;font-display:swap;src:url(../fonts/instrument-serif-latin-400-normal.woff2) format("woff2")}
+@font-face{font-family:"Instrument Serif";font-style:italic;font-weight:400;font-display:swap;src:url(../fonts/instrument-serif-latin-400-italic.woff2) format("woff2")}
+@font-face{font-family:"Inter";font-style:normal;font-weight:100 900;font-display:swap;src:url(../fonts/inter-latin-wght-normal.woff2) format("woff2")}
+@font-face{font-family:"Inter";font-style:italic;font-weight:100 900;font-display:swap;src:url(../fonts/inter-latin-wght-italic.woff2) format("woff2")}
+
+:root{
+  --cream:#f8f6f2;--ivory:#ffffff;--paper:#ffffff;--brown:#17140f;--muted:#5d564e;
+  --terra:#a07352;--terra2:#17140f;--terra-soft:#f0ebe4;--sage:#44503f;--sage2:#1f2621;--sage-soft:#eef0eb;
+  --sand:#d9cfc3;--line:#e6e1d9;--accent:#8b5a3c;
+  --display:"Instrument Serif","Times New Roman",serif;--serif:var(--sans);--hand:var(--display);
+  --radius:12px;
+}
+body{background:var(--cream);color:var(--brown);font-size:17px;letter-spacing:-.003em}
+::selection{background:#17140f;color:#fff}
+a{color:var(--brown);text-decoration-thickness:1px}
+
+/* Titres : un seul serif, poids normal, italique pour l'accent */
+h1,h2,h3{font-family:var(--display);font-weight:400;font-variation-settings:normal;letter-spacing:-.012em;line-height:1.04}
+h1{font-size:clamp(2.7rem,6.2vw,5.2rem);letter-spacing:-.02em;line-height:.98}
+h2{font-size:clamp(2.1rem,4.1vw,3.3rem)}
+h3{font-size:1.5rem;line-height:1.12}
+.hand{font-family:var(--display);font-style:italic;font-weight:400;font-size:1em;color:inherit;letter-spacing:-.01em;line-height:inherit}
+.lead{color:var(--muted);font-size:1.13rem;line-height:1.6}
+
+/* Surtitres : capitales espacées, fin trait, plus de pattes */
+.eyebrow{color:var(--muted);font-weight:600;font-size:.72rem;letter-spacing:.2em}
+.eyebrow::before{-webkit-mask:none;mask:none;width:28px;height:1px;background:currentColor;opacity:.6}
+.prose ul:not([class])>li::before,article.guide ul:not([class])>li::before,.featured ul:not([class])>li::before{
+  -webkit-mask:none;mask:none;width:.55em;height:1px;top:.8em;left:-1.2em;background:var(--brown)}
+
+/* Boutons */
+.btn{font-weight:600;letter-spacing:.01em;padding:14px 26px;border-width:1px;transition:background .2s,color .2s,border-color .2s}
+.btn:hover{transform:none}
+.btn-primary,.btn-sage{background:#17140f;color:#fff}
+.btn-primary:hover,.btn-sage:hover{background:#000}
+.btn-outline{border-color:#17140f;color:#17140f}
+.btn-outline:hover{background:#17140f;color:#fff}
+.more{color:var(--brown)!important;font-weight:600;letter-spacing:.01em}
+
+/* En-tête : logotype typographique */
+.header{background:rgba(248,246,242,.86);border-bottom:1px solid var(--line)}
+.brand svg{display:none}
+.brand strong{font-family:var(--display);font-weight:400;font-size:1.45rem;letter-spacing:-.01em;line-height:1}
+.brand small{font-size:.62rem;text-transform:uppercase;letter-spacing:.2em;color:var(--muted);margin-top:4px}
+.links a{font-weight:500;font-size:.9rem}
+.links a:not(.btn):hover{text-decoration:underline;text-underline-offset:6px}
+.links a.btn{padding:10px 20px}
+@media(max-width:760px){.brand strong{font-size:1.28rem}.mnav-toggle{border-radius:999px;background:transparent;border-color:var(--line)}
+  .mnav a::after{color:var(--muted)}.mnav{background:var(--cream)!important}}
+
+/* Cartes : blanches, filet fin, pas d'ombre, pas de saut */
+.gcard,.fcard,.intent,.diff-item,.soc-card,.hub-step,.profile,.resume a,.tcard{background:#fff;border:1px solid var(--line);box-shadow:none}
+.gcard:hover,.fcard:hover,.soc-card:hover,.tcard:hover{transform:none!important;box-shadow:none!important;border-color:#17140f}
+.gcard h3,.fcard h3{font-size:1.55rem;line-height:1.1}
+.alt{background:#fff}
+.block{padding:96px 0}
+@media(max-width:640px){.block{padding:64px 0}}
+
+/* Vignettes illustrées : carrées, discrètes */
+.thumb{border-radius:10px;border:0;box-shadow:none;background:#f1ece5;width:58px;height:58px}
+.f-portrait img,.f-portrait{border-radius:14px!important;box-shadow:none!important}
+
+/* Étiquettes : sobres */
+.tkind,.f-kind,.g-badge{background:transparent!important;border:1px solid var(--line);color:var(--muted)!important;font-weight:600;letter-spacing:.14em;border-radius:999px}
+.tneed{font-family:var(--serif);font-size:1.12rem;color:var(--muted)!important}
+.stamp{transform:none!important;font-family:var(--sans);font-style:normal;font-weight:700;font-size:.62rem!important;letter-spacing:.16em;
+  border:1px solid currentColor!important;border-radius:999px;padding:4px 10px;background:#fff!important}
+
+/* Numéros */
+.num,.rn,.hub-step::before{background:transparent!important;color:var(--brown)!important;border:1px solid var(--brown);font-weight:600;border-radius:50%}
+
+/* Fini les pointillés (remplacés dans les styles de page) */
+.keyq,.f-guess{border-color:var(--line)!important}
+
+/* Accueil : photo d'ouverture sans cadre */
+.hero-visual{background:transparent;border:0;box-shadow:none;padding:0 0 0;border-radius:0}
+.hero-visual img{border-radius:6px!important}
+.tag{background:rgba(255,255,255,.92);border:0;border-radius:999px;padding:6px 14px;font-size:.78rem;backdrop-filter:blur(6px)}
+.tag strong,.tag b{font-family:var(--display);font-weight:400;font-size:1.05rem;color:var(--brown)!important}
+
+/* Photos : nettes, format Instagram */
+.ph img{border-radius:6px;box-shadow:none}
+.ph figcaption{font-family:var(--sans);font-size:.72rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-top:10px}
+.story-photo{padding:0}
+
+/* Bandeau de confiance */
+.trust{border-block:1px solid var(--line);background:#fff}
+.trust ul{list-style:none;margin:0 auto;padding:22px 0;display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.trust li{display:flex;flex-direction:column;gap:2px;font-size:.86rem;color:var(--muted);line-height:1.4;padding-left:16px;border-left:1px solid var(--line)}
+.trust li:first-child{border-left:0;padding-left:0}
+.trust strong{font-family:var(--display);font-weight:400;font-size:1.3rem;color:var(--brown);line-height:1.1}
+@media(max-width:860px){.trust ul{grid-template-columns:1fr 1fr}.trust li:nth-child(3){border-left:0;padding-left:0}}
+@media(max-width:420px){.trust ul{grid-template-columns:1fr;gap:12px}.trust li{border-left:0;padding-left:0}}
+
+/* Pied de page */
+body>footer{background:#17140f}
+
+/* Petits titres : le serif étroit a besoin d'air */
+h3{letter-spacing:0}
+.intent h3,.diff-item h3,.hub-step h2,.soc-card h3,.profile h3{font-size:1.5rem;line-height:1.12;letter-spacing:0;font-variation-settings:normal}
+.tneed{font-family:var(--sans)!important;font-style:italic;font-size:.9rem!important;line-height:1.5}
+.thumb{border-radius:10px!important;border:0!important;box-shadow:none!important}
+
+/* Le serif étroit reste réservé aux grands titres et aux titres de cartes.
+   Ailleurs, les petits titres passent en Inter demi-gras, plus lisible. */
+h3{font-family:var(--sans);font-weight:650;font-size:1.12rem;letter-spacing:-.01em;line-height:1.3}
+.gcard h3,.fcard h3,.intent h3,.diff-item h3,.soc-card h3,.profile h3,.tcard h3,.featured h3,.story h3{font-family:var(--display);font-weight:400;letter-spacing:0;line-height:1.12}
+.hub-step h2{font-family:var(--display)}
+h1 em,h2 em{font-family:var(--display);font-style:italic;font-weight:400}
+.news>*,.hero-grid>*,.section-head>*,.story-grid>*{min-width:0}
+.eyebrow{max-width:100%;flex-wrap:wrap}
+@media(max-width:420px){.eyebrow{letter-spacing:.14em}}
