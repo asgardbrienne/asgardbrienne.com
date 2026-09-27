@@ -381,3 +381,17 @@ a:hover{text-decoration-color:var(--fauve)}
 .links a:not(.btn):hover{text-decoration-color:var(--fauve)}
 .mnav{background:#fff!important}
 .mnav a::after{color:var(--fauve)}
+
+/* Deuxième touche : le rose pâle des oreilles de Brienne.
+   Fauve = Asgard, rose = Brienne. Usage discret. */
+:root{--rose:#9e5f5b;--rose-clair:#d9a8a5;--rose-pale:#fbf3f2}
+.tag-a b{color:var(--fauve)!important}
+.tag-b b{color:var(--rose)!important}
+.profiles .profile:nth-of-type(1) h3{color:var(--fauve)}
+.profiles .profile:nth-of-type(2) h3{color:var(--rose)}
+.profiles .profile:nth-of-type(1){border-top:2px solid var(--fauve)}
+.profiles .profile:nth-of-type(2){border-top:2px solid var(--rose-clair)}
+.news{background:var(--rose-pale)!important;border:1px solid #f0dcda!important}
+[data-f="asgard"].on{background:var(--fauve)!important;border-color:var(--fauve)!important;color:#fff!important}
+[data-f="brienne"].on{background:var(--rose)!important;border-color:var(--rose)!important;color:#fff!important}
+.gal-it img{border-radius:0!important;box-shadow:none!important}
