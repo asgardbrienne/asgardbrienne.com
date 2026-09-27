@@ -346,3 +346,38 @@ svg text[font-family^="Georgia"]{font-family:var(--display);font-size:1.12em}
     linear-gradient(to top,rgba(17,16,14,.55) 0%,rgba(17,16,14,0) 45%)}
 }
 .ph-bento .ph-wide img{object-position:22% 50%}
+
+/* ==========================================================
+   Couleurs d'Asgard et Brienne : blanc, noir, fauve du pelage
+   (teintes relevées sur les photos des chiens)
+   ========================================================== */
+:root{
+  --cream:#ffffff;--ivory:#ffffff;--paper:#ffffff;--ink:#111111;--brown:#111111;--muted:#555049;
+  --fauve:#9a5a32;--fauve-clair:#c98a5e;--sable:#f7f0ea;
+  --taupe:#9a5a32;--terra:#9a5a32;--terra2:#111111;--terra-soft:#f7f0ea;--sage:#555049;--sage2:#111111;--sage-soft:#f7f0ea;
+  --sand:#e6d6c8;--line:#e8e2dc;--accent:#9a5a32;
+}
+body{background:#fff}
+.header{background:rgba(255,255,255,.96)}
+::selection{background:var(--fauve);color:#fff}
+.hand,h1 em,h2 em{color:var(--fauve)}
+.hero h1 .hand{color:#e7b48f}
+.eyebrow{color:var(--fauve)}
+.hero .eyebrow{color:rgba(255,255,255,.85)}
+.tkind,.f-kind,.g-badge{color:var(--fauve)!important}
+.num,.rn,.hub-step::before{color:var(--fauve)!important}
+.stamp{color:var(--fauve)!important}
+.btn-primary:hover,.btn-sage:hover,.links a.btn:hover{background:var(--fauve)!important;border-color:var(--fauve)!important}
+.btn-outline:hover{background:var(--ink)!important}
+.more:hover{color:var(--fauve)!important}
+a:hover{text-decoration-color:var(--fauve)}
+.gcard:hover h3,.fcard:hover h3,.soc-card:hover h3{text-decoration-color:var(--fauve)}
+.alt{background:#fff}
+.trust strong{color:var(--fauve)}
+.intro .lead{color:var(--ink)}
+.prose ul:not([class])>li::before,article.guide ul:not([class])>li::before,.featured ul:not([class])>li::before{background:var(--fauve)}
+.f-answer .f-k{color:var(--fauve-clair)}
+.ph figcaption{color:var(--muted)}
+.links a:not(.btn):hover{text-decoration-color:var(--fauve)}
+.mnav{background:#fff!important}
+.mnav a::after{color:var(--fauve)}
