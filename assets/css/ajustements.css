@@ -391,3 +391,6 @@ a:hover{text-decoration-color:var(--fauve)}
 .fcard.fk-idee:hover::before,.fcard.fk-notion:hover::before{background:#f6e6e4!important}
 .gcard h3{padding-right:0!important}
 .hero h1{font-size:clamp(2.6rem,4.6vw,4.4rem)}
+/* Images de cartes : illustration entière, format 3:2, sans recadrage */
+.gcard .thumb,.fcard .fc-foot img{width:210px!important;height:140px!important;object-fit:contain;top:20px}
+@media(max-width:640px){.gcard .thumb,.fcard .fc-foot img{width:180px!important;height:120px!important;top:15px}}
