@@ -285,3 +285,64 @@ svg text[font-family^="Georgia"]{font-family:var(--display);font-size:1.12em}
 /* Illustrations d'en-tête : sans cadre ni ombre */
 .g-pic{background:transparent!important;border:0!important;box-shadow:none!important;border-radius:0!important}
 .g-pic img{border-radius:0!important}
+
+/* ==========================================================
+   Accueil : ouverture plein cadre, bande d'introduction,
+   galerie en bande continue
+   ========================================================== */
+.hero{position:relative;padding:0!important;min-height:min(88vh,860px);display:flex;align-items:flex-end;overflow:hidden;background:var(--ink)}
+.hero .hero-grid{display:block!important;position:static}
+.hero .hero-visual{position:absolute;inset:0;z-index:0;padding:0;margin:0}
+.hero .hero-visual img{width:100%;height:100%;object-fit:cover;object-position:50% 40%}
+.hero .hero-visual::after{content:"";position:absolute;inset:0;
+  background:linear-gradient(to top,rgba(17,16,14,.82) 0%,rgba(17,16,14,.45) 38%,rgba(17,16,14,0) 68%)}
+.hero .hero-grid>div:first-child{position:relative;z-index:1;max-width:760px;padding:0 0 clamp(48px,8vh,88px)}
+.hero .eyebrow{color:rgba(255,255,255,.82)}
+.hero h1{color:#fff;font-size:clamp(3rem,6.8vw,6.2rem);line-height:.98;text-shadow:0 2px 30px rgba(0,0,0,.25)}
+.hero .actions{margin-top:30px;display:flex;flex-wrap:wrap;gap:12px}
+.hero .btn-primary{background:#fff!important;color:var(--ink)!important;border-color:#fff!important}
+.hero .btn-primary:hover{background:var(--cream)!important}
+.hero .btn-outline{border-color:rgba(255,255,255,.8)!important;color:#fff!important}
+.hero .btn-outline:hover{background:#fff!important;color:var(--ink)!important}
+.hero .tag{z-index:1;bottom:auto;top:28px;background:rgba(255,255,255,.9)}
+.hero .tag-a{left:auto;right:calc(max(20px,(100vw - 1120px)/2) + 150px)}
+.hero .tag-b{right:max(20px,(100vw - 1120px)/2)}
+@media(max-width:640px){
+  .hero{min-height:82vh}
+  .hero h1{font-size:clamp(2.5rem,11vw,3.4rem)}
+  .hero .actions .btn{width:100%}
+  .hero .tag{top:16px;font-size:.6rem;padding:6px 10px}
+  .hero .tag-a{left:16px;right:auto}.hero .tag-b{right:16px}
+  .hero .hero-visual img{object-position:58% 40%}
+}
+.intro{padding:clamp(64px,10vw,120px) 0 clamp(40px,6vw,72px);text-align:center}
+.intro .lead{font-family:var(--display);font-weight:500;color:var(--ink);font-size:clamp(1.5rem,2.6vw,2.15rem);line-height:1.35;letter-spacing:-.005em;margin:0}
+
+/* Galerie : bande continue, bord à bord */
+.ph-bento{width:100vw;margin-left:calc(50% - 50vw);grid-template-columns:repeat(4,1fr)!important;gap:4px!important}
+.ph-bento .ph,.ph-bento .ph-wide,.ph-bento .ph:last-child{grid-column:auto!important}
+.ph-bento .ph img,.ph-bento .ph-wide img{height:auto!important;aspect-ratio:4/5!important;object-fit:cover}
+.ph-bento figcaption{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+@media(max-width:640px){.ph-bento{grid-template-columns:1fr 1fr!important}}
+/* Cadrage et étiquettes de l'ouverture */
+.hero .hero-visual img{object-position:50% 18%}
+.hero .tag{top:auto;bottom:clamp(48px,8vh,88px)}
+.hero .tag-a{right:max(20px,(100vw - 1120px)/2);bottom:calc(clamp(48px,8vh,88px) + 44px)}
+.hero .tag-b{right:max(20px,(100vw - 1120px)/2)}
+@media(max-width:860px){
+  .hero{display:block;min-height:0;background:var(--ink)}
+  .hero .hero-visual{position:relative;inset:auto;aspect-ratio:6/5}
+  .hero .hero-visual::after{background:linear-gradient(to top,rgba(17,16,14,.55),rgba(17,16,14,0) 40%)}
+  .hero .hero-visual img{object-position:50% 30%}
+  .hero .hero-grid{display:flex!important;flex-direction:column-reverse}
+  .hero .hero-grid{width:100%}
+  .hero .hero-grid>div:first-child{padding:36px 16px 48px}
+  .hero .tag{top:auto;bottom:14px;font-size:.6rem;padding:6px 10px}
+  .hero .tag-a{left:16px;right:auto;bottom:14px}.hero .tag-b{right:16px}
+}
+@media(min-width:861px){
+  .hero .hero-visual::after{background:
+    linear-gradient(to right,rgba(17,16,14,.72) 0%,rgba(17,16,14,.45) 38%,rgba(17,16,14,0) 62%),
+    linear-gradient(to top,rgba(17,16,14,.55) 0%,rgba(17,16,14,0) 45%)}
+}
+.ph-bento .ph-wide img{object-position:22% 50%}
