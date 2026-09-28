@@ -484,3 +484,41 @@ article.guide h3{font-family:var(--sans);font-weight:600;font-size:1.1rem}
   .tldr{padding:22px 20px!important;margin-inline:-16px;margin-top:32px!important}
   article.guide section{padding-top:48px}
 }
+
+/* ==========================================================
+   Accueil : chiffres, principes et « Qu'est-ce qui t'amène ? »
+   ========================================================== */
+/* Chiffres en grand */
+.trust ul{padding:36px 0!important;gap:0!important}
+.trust li{align-items:center;text-align:center;padding:0 18px!important;border-left:1px solid var(--line)!important}
+.trust li:first-child{border-left:0!important}
+.trust strong{font-size:clamp(2.1rem,3.4vw,2.9rem)!important;color:var(--fauve)!important;margin-bottom:6px}
+@media(max-width:860px){.trust ul{grid-template-columns:1fr 1fr!important;gap:28px 0!important}.trust li:nth-child(3){border-left:0!important}}
+
+/* Les 4 principes : cartes sable, grand numéro */
+.diff{padding:clamp(48px,7vw,96px) 0}
+.diff-grid{counter-reset:pr;gap:16px!important}
+.diff-item{counter-increment:pr;background:var(--sable)!important;border:0!important;padding:34px 28px 30px!important;display:flex;flex-direction:column}
+.diff-item .num{display:none!important}
+.diff-item::before{content:counter(pr,decimal-leading-zero);font-family:var(--display);font-style:italic;font-size:2.6rem;line-height:1;color:var(--fauve);margin-bottom:18px}
+.diff-item h3{font-size:1.65rem!important;margin:0!important}
+.diff-item>p{color:var(--muted);font-size:.98rem;margin-top:10px}
+.diff-item .ex{display:block;margin-top:auto;padding-top:18px;font-family:var(--display);font-style:italic;font-size:1.12rem;line-height:1.4;color:var(--ink)}
+@media(max-width:950px){.diff-grid{grid-template-columns:1fr 1fr!important}}
+@media(max-width:560px){.diff-grid{grid-template-columns:1fr!important}}
+
+/* Qu'est-ce qui t'amène : trois cartes illustrées */
+.intent-grid{gap:24px!important;margin-top:36px!important}
+.intent{background:#fff!important;border:1px solid var(--line)!important;border-top:1px solid var(--line)!important;padding:0!important;display:flex;flex-direction:column;overflow:hidden;transition:border-color .2s}
+.intent:hover{border-color:var(--ink)!important}
+.intent-img{margin:0;aspect-ratio:4/3;overflow:hidden;background:var(--sable)}
+.intent-img img{width:100%;height:100%;object-fit:cover;object-position:50% 30%;transition:transform .6s ease}
+.intent:hover .intent-img img{transform:scale(1.04)}
+.intent h3{padding:24px 26px 0;font-size:1.75rem!important}
+.intent>p{padding:0 26px;margin-top:8px!important;font-size:.98rem!important}
+.intent ul{padding:8px 26px 20px!important;margin-top:auto!important}
+.intent li a{font-weight:500!important;font-size:1rem!important;min-height:52px!important;border-top:1px solid var(--line)!important;gap:14px!important;transition:padding .2s,color .2s}
+.intent li a:hover{padding-left:6px!important;color:var(--fauve)!important}
+.intent li a span{min-width:0!important;font-size:.6rem!important;letter-spacing:.16em!important;font-weight:600!important;color:var(--fauve)!important;border:1px solid currentColor;padding:3px 7px;line-height:1}
+.intent li a::after{color:var(--fauve)!important}
+.intent-more{margin-top:32px!important}
