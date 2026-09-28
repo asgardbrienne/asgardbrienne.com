@@ -541,3 +541,4 @@ article.guide h3{font-family:var(--sans);font-weight:600;font-size:1.1rem}
   .mnav a:last-child{border-bottom:0}
   .mnav a::after{content:"›";margin-left:auto;color:var(--fauve);font-size:1.3rem}
 }
+section[id],article.guide section[id]{scroll-margin-top:84px}
