@@ -159,15 +159,9 @@ body{-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
 @media(min-width:951px){.intent-grid{grid-template-columns:repeat(3,1fr)}}
 
 /* ==========================================================
-   Direction « Éditorial » : Cormorant Garamond et Jost,
+   Direction « Éditorial » (polices remplacées plus bas par Literata et Hanken Grotesk),
    ivoire pâle, encre, touche taupe. Angles nets, filets fins.
    ========================================================== */
-@font-face{font-family:"Cormorant Garamond";font-style:normal;font-weight:500;font-display:swap;src:url(../fonts/cormorant-garamond-latin-500-normal.woff2) format("woff2")}
-@font-face{font-family:"Cormorant Garamond";font-style:italic;font-weight:500;font-display:swap;src:url(../fonts/cormorant-garamond-latin-500-italic.woff2) format("woff2")}
-@font-face{font-family:"Cormorant Garamond";font-style:normal;font-weight:600;font-display:swap;src:url(../fonts/cormorant-garamond-latin-600-normal.woff2) format("woff2")}
-@font-face{font-family:"Cormorant Garamond";font-style:italic;font-weight:600;font-display:swap;src:url(../fonts/cormorant-garamond-latin-600-italic.woff2) format("woff2")}
-@font-face{font-family:"Jost";font-style:normal;font-weight:100 900;font-display:swap;src:url(../fonts/jost-latin-wght-normal.woff2) format("woff2")}
-@font-face{font-family:"Jost";font-style:italic;font-weight:100 900;font-display:swap;src:url(../fonts/jost-latin-wght-italic.woff2) format("woff2")}
 
 :root{
   --cream:#f7f5f0;--ivory:#ffffff;--paper:#ffffff;--brown:#1c1b19;--muted:#57534c;
@@ -542,3 +536,56 @@ article.guide h3{font-family:var(--sans);font-weight:600;font-size:1.1rem}
   .mnav a::after{content:"›";margin-left:auto;color:var(--fauve);font-size:1.3rem}
 }
 section[id],article.guide section[id]{scroll-margin-top:84px}
+
+
+/* ==========================================================
+   Typographie « Livre » : Literata (titres et texte),
+   Hanken Grotesk (menus, boutons, étiquettes).
+   Plus d'italique coloré ni de capitales espacées.
+   ========================================================== */
+@font-face{font-family:"Literata";font-style:normal;font-weight:200 900;font-display:swap;src:url(../fonts/literata-latin-opsz-normal.woff2) format("woff2")}
+@font-face{font-family:"Literata";font-style:italic;font-weight:200 900;font-display:swap;src:url(../fonts/literata-latin-opsz-italic.woff2) format("woff2")}
+@font-face{font-family:"Hanken Grotesk";font-style:normal;font-weight:100 900;font-display:swap;src:url(../fonts/hanken-grotesk-latin-wght-normal.woff2) format("woff2")}
+@font-face{font-family:"Hanken Grotesk";font-style:italic;font-weight:100 900;font-display:swap;src:url(../fonts/hanken-grotesk-latin-wght-italic.woff2) format("woff2")}
+:root{--text:"Literata",Georgia,serif;--display:"Literata",Georgia,serif;--sans:"Hanken Grotesk",ui-sans-serif,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;--serif:var(--sans);--hand:var(--display)}
+body{font-family:var(--text);font-size:17.5px;line-height:1.65;letter-spacing:0}
+@media screen{
+  body *:not(h1):not(h2):not(h3):not(#_),body *::before,body *::after{text-transform:none!important;letter-spacing:0!important}
+}
+h1,h2,h3{font-family:var(--display)!important;font-weight:650!important;font-style:normal;letter-spacing:-.015em!important;font-variation-settings:normal}
+h1{line-height:1.05!important}
+.hand,h1 .hand,h2 .hand,h1 em,h2 em,.hero h1 .hand,.c-start .hand,.m-cta .hand{font-family:inherit!important;font-style:normal!important;font-weight:inherit!important;color:inherit!important;font-size:1em!important}
+.brand strong{font-family:var(--display)!important;font-weight:650!important;letter-spacing:-.01em}
+.brand small{font-family:var(--sans)!important;font-size:.74rem!important}
+/* Interface en Hanken Grotesk */
+.links a,.mnav a,.btn,.more,.eyebrow,.crumbs,.tkind,.f-kind,.g-badge,.read-time,.tag,.tag b,.hub-k,.intent li a,.hub-links a,.chips a,.m-jump a,.c-cta-k,.m-ex,.c-age,.m-n,
+.trust li,.fc-foot,.sn,.num,.rn,.stamp,.tldr-t,.keyq-t,.ev-t,.alerts-t,.carnet-t,.look-t,.quiz-hint,.rv-l,.lv,.form-title,.lbl,.consent,.form-points,
+.qz-b button,.opt,.fld,label,input,select,textarea,button,.footer,.legal,.sources,.f-mini-t,.ph figcaption,.m-note,.gal-filter button{font-family:var(--sans)!important}
+.btn{font-size:.98rem!important;font-weight:600!important;padding:15px 26px}
+.links a:not(.btn){font-size:.95rem!important;font-weight:500!important}
+.links a.btn{padding:10px 18px!important}
+.more{font-size:.95rem!important;font-weight:600!important}
+.eyebrow{font-size:.92rem!important;font-weight:600!important;color:var(--fauve)!important}
+.tkind,.f-kind,.g-badge,.c-cta-k,.m-ex{font-size:.85rem!important;font-weight:600!important}
+.hub-k,.intent li a span{font-size:.74rem!important;font-weight:600!important;padding:3px 7px!important}
+.stamp{font-size:.74rem!important}
+.tag{font-size:.8rem!important}
+.tag b,.tag strong{font-size:.8rem!important}
+.tldr-t,.keyq-t,.ev-t,.alerts-t,.carnet-t,.look-t,.f-mini-t,.rv-l{font-size:.9rem!important;font-weight:700!important}
+.mnav a{font-size:1.2rem!important;font-weight:500!important}
+.chips a{font-size:.92rem!important}
+.m-jump a{font-size:.9rem!important}
+/* Titres de cartes et chiffres */
+.gcard h3,.fcard h3,.intent h3,.diff-item h3,.soc-card h3,.tcard h3,.c-time h3,.c-cards h3,.m-steps h3,.m-src h3,.m-scale h3,.m-eng h3,.c-tools strong,.c-cta strong,.toolbox strong,.actions-list h3,.profile h3{
+  font-family:var(--display)!important;font-weight:650!important;font-style:normal!important;letter-spacing:-.01em!important}
+.gcard h3,.fcard h3,.tcard h3,.intent h3,.diff-item h3{font-size:1.4rem!important}
+.trust strong{font-family:var(--display)!important;font-weight:650!important}
+.diff-item::before,.m-n,.c-age,.sn{font-family:var(--display)!important;font-style:normal!important;font-weight:650!important}
+.diff-item .ex,.keyq p:not(.keyq-t),.f-a,.tneed{font-style:normal!important;font-family:var(--text)!important}
+.diff-item .ex{font-size:1rem!important}
+.keyq p:not(.keyq-t){font-size:clamp(1.2rem,2vw,1.45rem)!important;font-weight:500}
+.intro .lead{font-family:var(--text)!important}
+article.guide h3{font-family:var(--sans)!important;font-weight:700!important;font-size:1.08rem!important}
+.prog strong{font-family:var(--sans)}
+.g-hero>*,.c-hero>*,.m-hero>*{min-width:0}
+@media(max-width:420px){h1{hyphens:auto;-webkit-hyphens:auto;overflow-wrap:break-word}}
