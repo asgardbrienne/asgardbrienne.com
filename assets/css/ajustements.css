@@ -645,3 +645,25 @@ article.guide h3{font-family:var(--sans)!important;font-weight:700!important;fon
 .u-ic{display:grid;place-items:center;width:64px;height:64px;background:var(--rose-pale);margin-bottom:18px}
 .u-ic .np-ic{width:34px;height:34px}
 @media(max-width:760px){.np-top{grid-template-columns:1fr}.np-pic{order:-1}.np-pic img{max-height:180px}}
+
+/* Accueil : bloc No panic */
+.npx{background:var(--rose-pale);border-block:1px solid #f0dcda;padding:clamp(40px,5vw,64px) 0}
+.npx-head{display:grid;grid-template-columns:1.4fr .8fr;gap:24px 48px;align-items:end}
+.npx-head>*{min-width:0}
+.npx-k{display:inline-block;font-family:var(--sans);font-weight:700;font-size:.85rem;color:#fff;background:var(--rose);padding:5px 10px}
+.npx h2{font-size:clamp(1.9rem,3.6vw,2.8rem)!important;margin-top:14px!important}
+.npx-head p{color:var(--muted);margin-top:10px;max-width:620px}
+.npx-num{background:var(--ink);color:#fff;padding:16px 20px;display:grid;gap:6px;font-family:var(--sans);font-size:.92rem}
+.npx-num strong{font-family:var(--display);font-weight:650;font-size:1.15rem;color:#fff}
+.npx-num a{color:#fff;text-decoration:none}
+.npx-num a strong{text-decoration:underline;text-decoration-color:var(--fauve-clair);text-underline-offset:4px}
+.npx-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:28px}
+.npx-t{display:grid;grid-template-columns:52px 1fr 20px;gap:14px;align-items:center;background:#fff;border:1px solid #f0dcda;border-left:3px solid var(--rose);padding:16px;text-decoration:none;color:var(--ink);transition:border-color .15s,transform .15s}
+.npx-t:hover{border-color:var(--ink);border-left-color:var(--rose);transform:translateY(-2px)}
+.npx-t .np-ic-w{margin:0}
+.npx-tx strong{display:block;font-family:var(--display);font-weight:650;font-size:1.12rem;line-height:1.25}
+.npx-tx span{display:block;font-family:var(--sans);font-size:.88rem;color:var(--muted);margin-top:3px;line-height:1.4}
+.npx-go{color:var(--rose);font-size:1.1rem}
+.npx-all{margin-top:22px}
+@media(max-width:950px){.npx-head{grid-template-columns:1fr}.npx-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){.npx-grid{grid-template-columns:1fr}.npx-all{width:100%}.npx-t{grid-template-columns:44px 1fr 16px;padding:14px}.npx-t .np-ic-w{width:44px;height:44px}}
