@@ -629,3 +629,19 @@ article.guide h3{font-family:var(--sans)!important;font-weight:700!important;fon
 @media(max-width:600px){.np-band .btn{width:100%}}
 /* Parcours : l'entrée « urgence » se distingue */
 .tr-opt.tr-urg{border-left:3px solid var(--rose)}
+
+/* No panic : pictogrammes et illustration */
+.np-ic{fill:none;stroke:var(--ink);stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+.np-ic .a{stroke:var(--fauve);stroke-width:1.8}
+.np-ic .af{fill:var(--fauve);stroke:none}
+.np-ic-w{order:-1;display:grid;place-items:center;width:52px;height:52px;background:var(--rose-pale);margin-bottom:16px}
+.np-ic-w .np-ic{width:28px;height:28px}
+.np-card{position:relative}
+.np-card:hover .np-ic-w{background:#f6e6e4}
+.np-top{display:grid;grid-template-columns:1.3fr .7fr;gap:clamp(24px,5vw,64px);align-items:center}
+.np-top>*{min-width:0}
+.np-pic{margin:0;background:var(--sable);padding:clamp(16px,2.4vw,28px);display:grid;place-items:center}
+.np-pic img{max-height:260px;width:auto;mix-blend-mode:multiply}
+.u-ic{display:grid;place-items:center;width:64px;height:64px;background:var(--rose-pale);margin-bottom:18px}
+.u-ic .np-ic{width:34px;height:34px}
+@media(max-width:760px){.np-top{grid-template-columns:1fr}.np-pic{order:-1}.np-pic img{max-height:180px}}
