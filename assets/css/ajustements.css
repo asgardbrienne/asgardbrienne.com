@@ -627,3 +627,5 @@ article.guide h3{font-family:var(--sans)!important;font-weight:700!important;fon
 .np-band h2{font-size:1.7rem!important;margin:0}
 .np-band p{margin:6px 0 0;color:var(--muted);max-width:640px}
 @media(max-width:600px){.np-band .btn{width:100%}}
+/* Parcours : l'entrée « urgence » se distingue */
+.tr-opt.tr-urg{border-left:3px solid var(--rose)}
