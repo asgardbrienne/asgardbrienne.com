@@ -39,6 +39,7 @@
   function showBehaviours() {
     hist = []; setStep(0);
     choices("Qu’est-ce qui te pose problème en ce moment ?", D.T.map(function (b) { return b.q; }), function (i) { hist.push(i); showSituations(i); focusTitle(); });
+    var first = body.querySelector(".tr-opt"); if (first) first.classList.add("tr-urg");
   }
   function showSituations(i) {
     setStep(1);
