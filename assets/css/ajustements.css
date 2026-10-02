@@ -701,3 +701,9 @@ article.guide h3{font-family:var(--sans)!important;font-weight:700!important;fon
 @media(max-width:700px){.t5-pic{aspect-ratio:16/10}.t5-main .hub-links{grid-template-columns:1fr}}
 .t5-list li{display:flex}.t5-list li>a{flex:1}
 .t5-main .hub-links li:last-child:nth-child(odd){grid-column:1/-1}
+
+/* Lien vers la liste des aliments */
+.al-tip{display:flex;justify-content:space-between;align-items:center;gap:14px 24px;flex-wrap:wrap;background:#fff;border:1px solid #f0dcda;border-left:3px solid var(--rose);padding:18px 20px;margin-top:24px}
+.al-tip strong{display:block;font-family:var(--display);font-weight:650;font-size:1.15rem;line-height:1.25}
+.al-tip span{display:block;color:var(--muted);font-family:var(--sans);font-size:.92rem;margin-top:3px}
+@media(max-width:600px){.al-tip .btn{width:100%}}
