@@ -759,3 +759,5 @@ article.guide h3{font-family:var(--sans)!important;font-weight:700!important;fon
 .dc-pic img{mix-blend-mode:normal;max-width:400px}
 .dc-card-pic{background:#fffcf2}
 .dc-card-pic img{mix-blend-mode:normal}
+.dc-card-pic{position:relative}
+.dc-card-pic img{position:absolute;left:6%;top:6%;width:88%;height:88%;max-width:none;max-height:none;object-fit:contain}
