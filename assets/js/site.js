@@ -1,4 +1,4 @@
-/* La vie d'Asgard & Brienne : scripts communs */
+/* Asgard & Brienne : scripts communs */
 
 /* Le réglage de l'inscription se fait dans assets/js/config.js */
 var NEWSLETTER_ACTION = window.NEWSLETTER_ACTION || "";
