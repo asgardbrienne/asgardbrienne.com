@@ -12,7 +12,10 @@
   panel.hidden = true;
   links.querySelectorAll("a").forEach(function (a) {
     var c = a.cloneNode(true);
-    c.removeAttribute("class");
+    var st = a.querySelector("strong");
+    if (st) c.textContent = st.textContent;
+    if (a.classList.contains("nav-np")) c.className = "mnav-np";
+    else c.removeAttribute("class");
     panel.appendChild(c);
   });
 
@@ -59,4 +62,17 @@
   }, { rootMargin: "0px 0px -6% 0px" });
   els.forEach(function (el) { el.classList.add("rv-item"); io.observe(el); });
   window.addEventListener("beforeprint", function () { els.forEach(function (el) { el.classList.add("rv-in"); }); });
+})();
+
+/* Menu déroulant « Comprendre » : clic, clavier, fermeture au clic extérieur ou avec Échap */
+(function () {
+  document.querySelectorAll(".dd").forEach(function (dd) {
+    var btn = dd.querySelector(".dd-btn");
+    if (!btn) return;
+    function set(open) { dd.classList.toggle("open", open); btn.setAttribute("aria-expanded", open ? "true" : "false"); }
+    btn.addEventListener("click", function (e) { e.stopPropagation(); set(!dd.classList.contains("open")); });
+    document.addEventListener("click", function (e) { if (!dd.contains(e.target)) set(false); });
+    document.addEventListener("keydown", function (e) { if (e.key === "Escape" && dd.classList.contains("open")) { set(false); btn.focus(); } });
+    dd.addEventListener("focusout", function (e) { if (!dd.contains(e.relatedTarget)) set(false); });
+  });
 })();
