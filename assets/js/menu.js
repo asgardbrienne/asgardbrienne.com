@@ -41,3 +41,22 @@
   });
   window.addEventListener("resize", function () { if (window.innerWidth > 760) set(false); });
 })();
+
+/* Apparition douce des blocs au défilement (désactivée si l'utilisateur réduit les animations) */
+(function () {
+  if (!("IntersectionObserver" in window)) return;
+  if (window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+  var sel = "main section, .gcard, .tcard, .fcard, .intent, .np-card, .npx-t, .dc-card, .rc-card, .rc-g, .fd-top-i, .t5-list li, .diff-item";
+  var els = [].slice.call(document.querySelectorAll(sel));
+  var vh = window.innerHeight;
+  els = els.filter(function (el) { return el.getBoundingClientRect().top > vh * 0.92; });
+  if (!els.length) return;
+  document.documentElement.classList.add("rv");
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (e.isIntersecting) { e.target.classList.add("rv-in"); io.unobserve(e.target); }
+    });
+  }, { rootMargin: "0px 0px -6% 0px" });
+  els.forEach(function (el) { el.classList.add("rv-item"); io.observe(el); });
+  window.addEventListener("beforeprint", function () { els.forEach(function (el) { el.classList.add("rv-in"); }); });
+})();

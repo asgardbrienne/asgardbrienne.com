@@ -834,3 +834,125 @@ article.guide h3{font-family:var(--sans)!important;font-weight:700!important;fon
 .rc-pred .rc-stat{margin-top:18px}
 @media(max-width:760px){.rc-hero .rc-side{order:0}.rc-hero .rc-mono{display:none}.rc-hero .rc-pic{max-width:260px;margin:0 auto}}
 @media(min-width:761px) and (max-width:1120px){.links a[href$="leur-vie.html"]{display:none}}
+
+/* ==========================================================
+   Refonte « premium » (octobre 2026)
+   Lin, bleu nuit, sauge, taupe. Cormorant Garamond + Inter.
+   ========================================================== */
+@font-face{font-family:"Cormorant Garamond";font-style:normal;font-weight:300 700;font-display:swap;src:url(../fonts/cormorant-garamond-latin-normal.woff2) format("woff2")}
+@font-face{font-family:"Cormorant Garamond";font-style:italic;font-weight:400;font-display:swap;src:url(../fonts/cormorant-garamond-latin-italic.woff2) format("woff2")}
+@font-face{font-family:"Inter";font-style:normal;font-weight:100 900;font-display:swap;src:url(../fonts/inter-latin-wght-normal.woff2) format("woff2")}
+:root{
+  --lin:#F6F1EA;--lin-2:#EEE6DB;--carte:#FFFDF9;
+  --ink:#27251F;--muted:#6B645B;--brown:#27251F;
+  --nuit:#1F2B34;--nuit-2:#2C3B47;
+  --sauge:#66775F;--sauge-2:#4E5D48;--sauge-pale:#E7ECE2;
+  --taupe:#8A7A6B;--fauve:#9A6440;--fauve-clair:#D9B48F;
+  --sable:#EFE7DC;--line:rgba(39,37,31,.09);
+  --rose:#9B6560;--rose-pale:#F7ECEA;
+  --display:"Cormorant Garamond","Cormorant",Georgia,serif;
+  --text:"Inter",ui-sans-serif,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+  --sans:"Inter",ui-sans-serif,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+  --serif:var(--display);
+  --r:14px;--ombre:0 1px 2px rgba(39,37,31,.04),0 10px 30px rgba(39,37,31,.06);
+}
+html{background:var(--lin)}
+body{background:var(--lin)!important;color:var(--ink);font-family:var(--text);font-weight:400;font-size:17px;line-height:1.75;-webkit-font-smoothing:antialiased}
+p,li{color:inherit}
+::selection{background:var(--sauge-pale)!important;color:var(--ink)!important}
+
+/* Titres fins et élégants */
+h1,h2,h3,h4,.hand,.n,.num,.sn,.fg-n,.fd-top-n,.rc-gn,.dc-card-n,.t5-n,.rc-stat b,.dc-fig b,.fg-score b,.fd-st b,.npx-tx strong,.fd-tx strong,.t5-tx strong,.fd-n,.npx-num strong,.al-tip strong{font-family:var(--display)!important;font-size-adjust:.44}
+h1,h2{font-weight:500!important;letter-spacing:-.005em!important;line-height:1.08!important}
+h3,h4{font-weight:600!important;letter-spacing:0!important;line-height:1.2!important}
+.hand{font-style:italic!important;font-weight:400!important;color:var(--fauve)!important}
+.lead,.dc-lead,.fd-lead{color:var(--muted)!important;font-weight:400}
+
+/* En-tête */
+.header{background:rgba(246,241,234,.86)!important;border-bottom:1px solid var(--line)!important;backdrop-filter:saturate(1.4) blur(14px)}
+.brand strong{font-family:var(--display)!important;font-weight:600!important;font-size:1.45rem!important;font-size-adjust:.44}
+.links a{font-family:var(--sans)!important;font-weight:450!important;color:var(--ink)!important;transition:color .25s ease}
+.links a:not(.btn):hover{color:var(--sauge-2)!important}
+
+/* Boutons : angles adoucis, transitions douces */
+.btn,.fg-b,.fg-next,.al-c,.fd-c,.fd-cat,.fd-sugg button,.qz-b button,.f-filter button,.gal-filter button,.tr-opt{border-radius:10px!important;transition:background-color .3s ease,color .3s ease,border-color .3s ease,transform .3s ease,box-shadow .3s ease!important}
+.btn-primary,.links a.btn,.fg-yes,.btn-sage{background:var(--nuit)!important;border-color:var(--nuit)!important;color:#fff!important}
+.btn-primary:hover,.links a.btn:hover,.fg-yes:hover,.btn-sage:hover{background:var(--sauge-2)!important;border-color:var(--sauge-2)!important;transform:translateY(-1px)}
+.btn-outline{background:transparent!important;border:1px solid rgba(39,37,31,.28)!important;color:var(--ink)!important}
+.btn-outline:hover{background:var(--carte)!important;border-color:var(--ink)!important;color:var(--ink)!important}
+.fg-next{background:var(--sauge)!important}.fg-next:hover{background:var(--sauge-2)!important}
+.fd-c.on,.fd-cat.on,.al-c.on,.f-filter button.on,.qz-b button.ok{background:var(--nuit)!important;border-color:var(--nuit)!important;color:#fff!important}
+
+/* Blocs sombres : bleu nuit au lieu du noir */
+.npx-num,.u-call,.fd-urg,.fd-game-w,.dc-fig,.rc-stat,.f-answer,.tldr,.method,.c-start,.m-cta,.np-urg,.res-head,body>footer,footer,.t5-pic .t5-n,.rc-gn,.sn,.f-vs-w span,.soc-ic,.skip{background:var(--nuit)!important}
+.lv-preuve{background:var(--sauge-2)!important;color:#fff!important}
+.f-do li::before,.alerts-l li::before,.dc-col-h li::before,ol.prog li::before,.tr-steps li.on::before,.rubriques .rn,.cal-now .cal-s{background:var(--sauge)!important}
+.readbar span,.bar span{background:var(--sauge)!important}
+
+/* Cartes et blocs : sans bordures, ombres légères, coins doux */
+.gcard,.tcard,.fcard,.intent,.np-card,.npx-t,.t5-main,.t5-list a,.dc-card,.dc-col,.rc-card,.rc-g,.rc-facts,.fd,.fd-rep>div,.fd-top-i,.al-tip,.f-vs-c,.f-do li,.f-see li,.look,.callout,.evidence,.alerts,.keyq,.toolbox,.diff-item,.tr-app,.tr-opt,.fg-card,.al,.form,.news,.reveal details,.qz,.f-pn a,.hub-links,.profiles>*,.step,.ph,.m-photo,.c-photo,.rc-pic,.dc-pic,.np-pic,.g-pic,.f-portrait,.rc-own,.dc-see{border-color:transparent!important;border-radius:var(--r)!important}
+.gcard,.tcard,.fcard,.intent,.np-card,.npx-t,.t5-main,.t5-list a,.dc-card,.dc-col,.rc-card,.rc-g,.rc-facts,.fd,.fd-rep>div,.fd-top-i,.al-tip,.f-vs-c,.f-do li,.f-see li,.diff-item,.tr-opt,.fg-card,.al,.form,.f-pn a,.qz{background:var(--carte)!important;box-shadow:var(--ombre)!important;overflow:hidden}
+.gcard,.tcard,.fcard,.intent,.np-card,.npx-t,.t5-list a,.dc-card,.rc-card,.tr-opt,.f-pn a{transition:transform .45s cubic-bezier(.2,.7,.2,1),box-shadow .45s ease!important}
+.gcard:hover,.tcard:hover,.fcard:hover,.intent:hover,.np-card:hover,.npx-t:hover,.t5-list a:hover,.dc-card:hover,.rc-card:hover,.tr-opt:hover,.f-pn a:hover{transform:translateY(-3px)!important;box-shadow:0 2px 4px rgba(39,37,31,.04),0 18px 40px rgba(39,37,31,.09)!important}
+.gcard::before,.tcard::before,.fcard::before,.dc-card-pic,.rc-card-pic,.intent-img{background:var(--lin-2)!important}
+.callout,.evidence,.keyq,.look,.alerts,.rc-own,.toolbox{background:var(--carte)!important;box-shadow:var(--ombre)}
+.callout.warn,.alerts{background:var(--rose-pale)!important}
+.t5-main{border-top:0!important}
+.npx-t,.dc-col,.dc-col-h,.fd-top-i,.al-tip{border-left-width:0!important;border-top-width:0!important}
+.rc-own{border-left:0!important;background:var(--sauge-pale)!important}
+.gcard img,.tcard img,.fcard img,.dc-card-pic img,.rc-card-pic img{border-radius:0}
+img{border-radius:0}
+.ph img,.m-photo img,.c-photo img,.hero-photo img,.intent-img img{border-radius:var(--r)}
+.hero-photo::after,.c-photo::after,.m-photo::after{display:none!important}
+
+/* Sections claires */
+.trust,.block.alt,.fd-hero,.dc-hero,.rc-sec-sable,.fd-sec-sable,.npx,.np-band,.c-sec,.alt{background:var(--lin-2)!important;border:0!important}
+.diff,.fd-sec,.rc-sec,.block{background:transparent}
+
+/* Plus d'air */
+.block,.fd-sec,.rc-sec,.dc-hub{padding-top:clamp(72px,9vw,132px)!important;padding-bottom:clamp(72px,9vw,132px)!important}
+.section-head,.fd-head{margin-bottom:clamp(28px,4vw,48px)}
+article.guide section,.f-body>section,.dc-body>section,.rc-body>section{margin-top:clamp(48px,6vw,80px)!important}
+p+p{margin-top:1.1em}
+
+/* Lignes : plus fines et plus douces */
+hr,.np-group,.fd-head,.alerts-t{border-color:var(--line)!important}
+.np-group{border-top-width:1px!important}
+
+/* Libellés et petits textes */
+.eyebrow,.fd-k,.f-k,.ev-t,.tkind,.rc-card-k,.rc-fact dt,.npx-k,.g-badge,.f-kind,.crumbs{font-family:var(--sans)!important;font-weight:500!important;color:var(--taupe)!important;letter-spacing:.02em!important}
+.npx-k{background:transparent!important;padding:0!important;color:var(--rose)!important}
+.more,.fd-go,.dc-card .more,.rc-card .more{color:var(--sauge-2)!important;font-weight:600!important}
+a{text-decoration-thickness:1px;text-underline-offset:3px}
+
+/* Pied de page */
+footer,body>footer{color:rgba(255,255,255,.82)}
+footer a{color:#fff!important;transition:opacity .25s}
+footer a:hover{opacity:.7}
+
+/* Apparition en fondu au défilement */
+@media(prefers-reduced-motion:no-preference){
+  html.rv .rv-item{opacity:0;transform:translateY(14px);transition:opacity .9s cubic-bezier(.2,.7,.2,1),transform .9s cubic-bezier(.2,.7,.2,1)}
+  html.rv .rv-item.rv-in{opacity:1;transform:none}
+}
+@media print{html.rv .rv-item{opacity:1!important;transform:none!important}}
+h1,h2,h3,h4,.n,.num,.sn,.fd-top-n,.rc-gn,.dc-card-n,.t5-n,.rc-stat b,.dc-fig b,.fg-score b,.fd-st b,.npx-num strong,.fd-n,.trust strong,.np-urg strong{font-variant-numeric:lining-nums proportional-nums!important;font-feature-settings:"lnum" 1!important}
+.hero-visual::before,.hero-visual::after,.hero-photo::before,.c-photo::before,.m-photo::before{display:none!important}
+.tag,.t5-n,.t5-new,.np-ic-w,.fd-ic,.dc-ic,.rc-gn,.fd-top-ic,.u-ic,.sn{border-radius:8px!important}
+.tag{box-shadow:0 4px 14px rgba(39,37,31,.12)}
+*{font-variant-numeric:lining-nums}
+.f-answer,.npx-num,.u-call,.dc-fig,.rc-stat,.tldr,.np-urg,.method,.c-start,.m-cta,.fg-card,.fd-search,.al-q,.f-fig,.res-head{border-radius:var(--r)!important}
+.np-urg{overflow:hidden}
+.fd-search{box-shadow:var(--ombre)!important;border:1px solid rgba(39,37,31,.14)!important;background:var(--carte)!important}
+.fd-search:focus-within{border-color:var(--sauge)!important;box-shadow:0 0 0 4px var(--sauge-pale),var(--ombre)!important}
+.f-fig{border-color:transparent!important;box-shadow:var(--ombre);background:var(--carte)!important}
+.f-portrait,.g-pic{background:var(--carte)!important}
+.fd-st{border-radius:10px!important;border-top-width:0!important;transform:none!important}
+.fd-top-n{color:var(--lin-2)!important}
+.np-group h2,article.guide section,.f-body section>h2,.dc-body section>h2{border-color:var(--line)!important}
+.tldr{background:var(--sauge-pale)!important;color:var(--ink)!important;border-radius:var(--r)!important}
+.sn{background:transparent!important;color:var(--fauve)!important;font-weight:400!important}
+article.guide section,article.guide section>h2{border-top-color:var(--line)!important}
+@media(min-width:761px) and (max-width:1180px){.links a[href$="leur-vie.html"]{display:none}}
+@media(min-width:761px) and (max-width:1040px){.links a[href$="chien-categorise.html"]{display:none}}
+:root{--taupe:#6E5F51;--fauve:#8A5634;--rose:#8E5A55}
