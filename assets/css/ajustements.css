@@ -275,7 +275,7 @@ body>footer strong{font-family:var(--display);font-weight:500;font-size:1.4rem}
 }
 /* Schémas : mêmes polices que le site */
 svg text{font-family:var(--sans)}
-svg text[font-family^="Georgia"]{font-family:var(--display);font-size:1.12em}
+svg text[font-family^="Georgia"]{font-family:var(--display)}
 /* Illustrations d'en-tête : sans cadre ni ombre */
 .g-pic{background:transparent!important;border:0!important;box-shadow:none!important;border-radius:0!important}
 .g-pic img{border-radius:0!important}
@@ -761,3 +761,16 @@ article.guide h3{font-family:var(--sans)!important;font-weight:700!important;fon
 .dc-card-pic img{mix-blend-mode:normal}
 .dc-card-pic{position:relative}
 .dc-card-pic img{position:absolute;left:6%;top:6%;width:88%;height:88%;max-width:none;max-height:none;object-fit:contain}
+
+/* Optimisation mobile (audit du 4 octobre) */
+.mnav-toggle span{font-size:.72rem!important}
+@media(max-width:760px){
+  input[type=email],input[type=text],input[type=search],input[type=date],input[type=number],input[type=tel],select,textarea{font-size:16px!important}
+  form.js-newsletter input[type=email]{min-height:48px}
+}
+@media(max-width:640px){
+  .diff-grid,#outils .tools-grid,#fiches .fiche-grid{display:flex!important;grid-template-columns:none!important;overflow-x:auto;scroll-snap-type:x mandatory;gap:12px!important;margin-right:-16px;padding:2px 16px 10px 0;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+  .diff-grid::-webkit-scrollbar,#outils .tools-grid::-webkit-scrollbar,#fiches .fiche-grid::-webkit-scrollbar{display:none}
+  .diff-grid>*,#outils .tools-grid>*,#fiches .fiche-grid>*{flex:0 0 82%;min-width:0;scroll-snap-align:start}
+  .intent-img{aspect-ratio:16/9!important}
+}
