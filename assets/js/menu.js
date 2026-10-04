@@ -76,3 +76,45 @@
     dd.addEventListener("focusout", function (e) { if (!dd.contains(e.relatedTarget)) set(false); });
   });
 })();
+
+/* Fiches race : sommaire actif, compteur, barre de lecture, idées reçues ouvertes à l'impression */
+(function () {
+  var wrap = document.querySelector(".rf-wrap");
+  if (!wrap) return;
+  var links = [].slice.call(wrap.querySelectorAll(".rf-toc a"));
+  var secs = links.map(function (a) { return document.getElementById(a.getAttribute("href").slice(1)); });
+  var bar = document.createElement("div");
+  bar.className = "rf-progress";
+  bar.setAttribute("aria-hidden", "true");
+  document.body.appendChild(bar);
+  var ticking = false;
+  function update() {
+    ticking = false;
+    var y = window.scrollY, h = document.documentElement.scrollHeight - window.innerHeight;
+    bar.style.transform = "scaleX(" + (h > 0 ? Math.min(1, y / h) : 0) + ")";
+    var cur = -1;
+    secs.forEach(function (s, i) { if (s && s.getBoundingClientRect().top < window.innerHeight * 0.35) cur = i; });
+    links.forEach(function (a, i) { a.classList.toggle("on", i === cur); });
+  }
+  window.addEventListener("scroll", function () { if (!ticking) { ticking = true; requestAnimationFrame(update); } }, { passive: true });
+  update();
+  var n = document.querySelector("[data-count]");
+  var still = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (n && "IntersectionObserver" in window && !still) {
+    var end = +n.getAttribute("data-count");
+    var io = new IntersectionObserver(function (es) {
+      if (!es[0].isIntersecting) return;
+      io.disconnect();
+      var t0 = null;
+      (function step(t) {
+        if (!t0) t0 = t;
+        var p = Math.min(1, (t - t0) / 1200);
+        n.textContent = Math.round(end * (1 - Math.pow(1 - p, 3)));
+        if (p < 1) requestAnimationFrame(step);
+      })(performance.now());
+    }, { threshold: 0.6 });
+    n.textContent = "0";
+    io.observe(n);
+  }
+  window.addEventListener("beforeprint", function () { [].forEach.call(document.querySelectorAll(".rf-myth"), function (d) { d.open = true; }); });
+})();
