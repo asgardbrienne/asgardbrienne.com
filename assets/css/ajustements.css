@@ -1017,3 +1017,8 @@ article.guide section,article.guide section>h2{border-top-color:var(--line)!impo
 @media(max-width:960px){.links>a:not(.btn),.links .dd{display:none!important}.brand small{display:none}}
 @media(max-width:760px){.brand strong{font-size:1.22rem!important}.links .btn{padding:9px 13px!important;font-size:.88rem!important}}
 @media(max-width:360px){.brand strong{font-size:1.08rem!important}}
+/* Races : illustrations sur fond crème */
+.rc-pic.rc-ill,.rc-card-pic.rc-ill{background:#FEFDF5!important}
+.rc-pic.rc-ill{padding:0;overflow:hidden}
+.rc-pic.rc-ill img{max-width:100%}
+.rc-card-pic.rc-ill img{left:0;top:2%;width:100%;height:98%;object-fit:contain}
